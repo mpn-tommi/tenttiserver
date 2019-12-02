@@ -1,3 +1,4 @@
-import {PostgresQuestionDAO} from '../model/PostgresQuestionDAO';
+// import {PostgresQuestionDAO} from '../model/PostgresQuestionDAO';
+import { ArrayQuestionDAO } from '../model/ArrayQuestionDAO';
 
-export const daoimpl = new PostgresQuestionDAO();
+export const daoimpl = new ArrayQuestionDAO();

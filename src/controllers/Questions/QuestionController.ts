@@ -1,6 +1,7 @@
 import { Request, Response } from 'express';
 import { IController } from '../IController';
 import { IQuestionDAO } from '../../model/IQuestionDAO';
+import { Question } from '../../model/Question';
 
 export class QuestionController extends IController {
     dao: IQuestionDAO;
@@ -12,8 +13,8 @@ export class QuestionController extends IController {
         throw new Error("Method not implemented.");
     } 
     public read(req: Request<import("express-serve-static-core").ParamsDictionary>, res: Response): void {
-        const questions = this.dao.readall();
-        res.json([{ message: 'GET /api/questions request received' }]);
+        const questions: Question[] = this.dao.readall();
+        res.json(questions);
     }
     public update(req: Request<import("express-serve-static-core").ParamsDictionary>, res: Response): void {
         throw new Error("Method not implemented.");
